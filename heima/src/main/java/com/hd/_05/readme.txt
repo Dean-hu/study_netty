@@ -1,0 +1,5 @@
+实现boss线程和worker线程，boss负责接进来，worker负责处理
+同时用ConcurrentLinkedDeque<Runnable> queue来实现线程间的通信，将sc的注册和selector放到worker一个线程中
+就不会乱掉了，同时用wakeup()唤醒selector以防阻塞
+
+加入两个worker 采用轮询算法分配
